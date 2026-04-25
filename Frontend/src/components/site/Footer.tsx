@@ -38,8 +38,8 @@ const socials = [
 
 const contact = [
   { Icon: Mail,    text: "hello@kraftrix.africa" },
-  { Icon: Phone,   text: "+254 700 000 000"       },
-  { Icon: MapPin,  text: "Nairobi, Kenya"          },
+  { Icon: Phone,   text: "+254 707728143"       },
+  { Icon: MapPin,  text: "Eldoret, Kenya"          },
 ];
 
 /* ── useInView ──────────────────────────────────────────────── */
@@ -186,7 +186,10 @@ const Footer = () => {
       {/* main content */}
       <div style={{ maxWidth: 1120, margin: "0 auto", padding: "72px 48px 56px", position: "relative" }}>
         <button
-          onClick={() => navigate("/signin")}
+          onClick={() => {
+            navigate("/signin");
+            window.scrollTo({ top: 0, behavior: "smooth" });
+          }}
           aria-label="Sign in"
           style={{
             position: "absolute",

@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Lock, ArrowRight, Mail, Eye, EyeOff } from "lucide-react";
 import Navbar from "@/components/site/Navbar";
 import Footer from "@/components/site/Footer";
@@ -18,6 +18,10 @@ const SignIn = () => {
   const [password, setPassword] = useState("");
   const [showPassword, setShowPassword] = useState(false);
   const [focusedField, setFocusedField] = useState<string | null>(null);
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();

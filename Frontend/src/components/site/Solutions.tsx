@@ -134,7 +134,7 @@ const NEWS_ITEMS: NewsItem[] = [
   },
   {
     id: 2,
-    title: "Tech Summit Nairobi 2026 — Kraftrix is Exhibiting",
+    title: "Tech Summit Eldoret 2026 — Kraftrix is Exhibiting",
     date: "May 5, 2026",
     category: "Event",
     preview: "Join us at the Kenyatta International Convention Centre. Live demos, giveaways, and exclusive partner announcements.",

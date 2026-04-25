@@ -16,7 +16,7 @@ const C = {
 
 const contactItems = [
   { Icon: Mail,          label: "Email",    value: "hello@kraftrix.africa",            href: "mailto:hello@kraftrix.africa" },
-  { Icon: Phone,         label: "Phone",    value: "+254 700 000 000",                 href: "tel:+254700000000" },
+  { Icon: Phone,         label: "Phone",    value: "+254 707728143",                 href: "tel:+254700000000" },
   { Icon: MessageCircle, label: "WhatsApp", value: "Chat with us instantly",           href: "https://wa.me/254700000000" },
   { Icon: MapPin,        label: "HQ",       value: "Nairobi, Kenya — serving Africa",  href: "#" },
 ];
