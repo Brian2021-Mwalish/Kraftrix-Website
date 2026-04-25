@@ -1,0 +1,137 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&family=Inter:wght@400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 36 25% 98%;
+    --foreground: 0 0% 7%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 0 0% 7%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 7%;
+
+    --primary: 250 42% 36%;
+    --primary-foreground: 36 25% 98%;
+
+    --secondary: 250 43% 47%;
+    --secondary-foreground: 36 25% 98%;
+
+    --muted: 250 20% 95%;
+    --muted-foreground: 250 10% 40%;
+
+    --accent: 9 94% 58%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 250 20% 90%;
+    --input: 250 20% 90%;
+    --ring: 250 42% 36%;
+
+    --radius: 0.875rem;
+
+    /* Brand tokens */
+    --royal: 250 42% 36%;       /* #413584 */
+    --vibrant: 250 43% 47%;     /* #5644AE */
+    --flame: 9 94% 58%;         /* #F8492D */
+    --ink: 0 0% 0%;
+    --paper: 36 25% 98%;        /* #FBFAF9 */
+
+    /* Solid brand fills (kept as variables so all components stay in sync) */
+    --gradient-brand: hsl(var(--royal));
+    --gradient-purple: hsl(var(--vibrant));
+    --gradient-flame: hsl(var(--flame));
+    --gradient-radial: hsl(var(--paper));
+
+    --shadow-glow: 0 20px 60px -20px hsl(var(--vibrant) / 0.55);
+    --shadow-flame: 0 20px 50px -15px hsl(var(--flame) / 0.45);
+    --shadow-soft: 0 10px 40px -15px hsl(var(--royal) / 0.18);
+
+    --transition-smooth: cubic-bezier(0.22, 1, 0.36, 1);
+
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 240 5.9% 10%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    --background: 250 30% 6%;
+    --foreground: 36 25% 98%;
+    --card: 250 30% 9%;
+    --card-foreground: 36 25% 98%;
+    --popover: 250 30% 9%;
+    --popover-foreground: 36 25% 98%;
+    --primary: 250 43% 60%;
+    --primary-foreground: 0 0% 7%;
+    --secondary: 250 30% 16%;
+    --secondary-foreground: 36 25% 98%;
+    --muted: 250 30% 14%;
+    --muted-foreground: 250 10% 70%;
+    --accent: 9 94% 58%;
+    --accent-foreground: 0 0% 100%;
+    --border: 250 30% 16%;
+    --input: 250 30% 16%;
+    --ring: 250 43% 60%;
+  }
+}
+
+@layer base {
+  * { @apply border-border; }
+  html { scroll-behavior: smooth; }
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+    font-feature-settings: "ss01", "cv01";
+  }
+  h1, h2, h3, h4, h5 { @apply font-display tracking-tight; }
+}
+
+@layer components {
+  .container-x { @apply mx-auto w-full max-w-7xl px-6 lg:px-10; }
+  .text-gradient {
+    color: hsl(var(--flame));
+  }
+  .glass {
+    background: hsl(var(--paper) / 0.7);
+    backdrop-filter: saturate(180%) blur(20px);
+    -webkit-backdrop-filter: saturate(180%) blur(20px);
+  }
+  .ring-brand { box-shadow: 0 0 0 1px hsl(var(--royal) / 0.12); }
+}
+
+@layer utilities {
+  .bg-gradient-brand { background: var(--gradient-brand); }
+  .bg-gradient-purple { background: var(--gradient-purple); }
+  .bg-gradient-radial { background: var(--gradient-radial); }
+  .shadow-glow { box-shadow: var(--shadow-glow); }
+  .shadow-flame { box-shadow: var(--shadow-flame); }
+  .shadow-soft { box-shadow: var(--shadow-soft); }
+  .transition-smooth { transition: all 0.5s var(--transition-smooth); }
+  .animate-float { animation: float 6s ease-in-out infinite; }
+  .animate-fade-up { animation: fadeUp 0.8s var(--transition-smooth) both; }
+  .animate-blob { animation: blob 14s ease-in-out infinite; }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-12px); }
+}
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+@keyframes blob {
+  0%, 100% { transform: translate(0,0) scale(1); }
+  33% { transform: translate(30px,-20px) scale(1.1); }
+  66% { transform: translate(-20px,30px) scale(0.95); }
+}
